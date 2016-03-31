@@ -223,6 +223,28 @@ module.exports = function (grunt) {
           return !fs.existsSync('config/env/local.js');
         }
       }
+    },
+    wiredep: {
+      task: {
+
+        // Point to the files that should be updated when
+        // you run `grunt wiredep`
+        src: [
+          'modules/**/**/**/*.html',   // .html support...
+          'modules/**/**/**/*.jade',   // .jade support...
+          // 'modules/styles/main.scss',  // .scss & .sass support...
+          // 'modules/config.yml'         // and .yml & .yaml support out of the box!
+        ],
+        ignorePath: '../../../../public/',
+        devDependencies: true,
+        options: {
+          
+          // See wiredep's configuration documentation for the options
+          // you may pass:
+          //src: ['filepaths', 'and/even/globs/*.html', 'to take', 'control of.'],
+          // https://github.com/taptapship/wiredep#configuration
+        }
+      }
     }
   });
 
@@ -240,6 +262,7 @@ module.exports = function (grunt) {
   // Load NPM tasks
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('grunt-protractor-coverage');
+  grunt.loadNpmTasks('grunt-wiredep');
 
   // Make sure upload directory exists
   grunt.task.registerTask('mkdir:upload', 'Task that makes sure upload directory exists.', function () {
@@ -250,7 +273,7 @@ module.exports = function (grunt) {
 
     done();
   });
-
+  grunt.task.registerTask('changes', ['watch']);
   // Connect to the MongoDB instance and load the models
   grunt.task.registerTask('mongoose', 'Task that connects to the MongoDB instance and loads the application models.', function () {
     // Get the callback

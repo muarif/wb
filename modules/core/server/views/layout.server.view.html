@@ -50,10 +50,28 @@
 
   <!--Load The Socket.io File-->
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-
+   <!-- bower:js -->
+   <script src="lib/es5-shim/es5-shim.js"></script>
+   <script src="lib/jquery/dist/jquery.js"></script>
+   <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+   <script src="lib/angular/angular.js"></script>
+   <script src="lib/angular-resource/angular-resource.js"></script>
+   <script src="lib/angular-animate/angular-animate.js"></script>
+   <script src="lib/angular-mocks/angular-mocks.js"></script>
+   <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+   <script src="lib/angular-ui-utils/ui-utils.js"></script>
+   <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+   <script src="lib/angular-file-upload/angular-file-upload.js"></script>
+   <script src="lib/angular-messages/angular-messages.js"></script>
+   <script src="lib/owasp-password-strength-test/owasp-password-strength-test.js"></script>
+   <script src="lib/angular-aria/angular-aria.js"></script>
+   <script src="lib/angular-material/angular-material.js"></script>
+   <script src="lib/react/react.js"></script>
+   <script src="lib/react/react-dom.js"></script>
+   <!-- endbower -->
   <!--Application JavaScript Files-->
   {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
-
+ 
   {% if livereload %}
   <!--Livereload script rendered -->
   <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
