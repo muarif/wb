@@ -8,6 +8,11 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
       ],
       js: [
+        'public/lib/jquery/dist/jquery.min.js',
+        'public/lib/react/react.min.js',
+        'public/lib/react/react-dom.min.js',
+        'public/lib/react/react-dom-server.min.js',
+        'public/lib/react/react-with-addons.min.js',
         'public/lib/angular/angular.min.js',
         'public/lib/angular-resource/angular-resource.min.js',
         'public/lib/angular-animate/angular-animate.min.js',
